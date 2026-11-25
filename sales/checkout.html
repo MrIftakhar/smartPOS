@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Checkout | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/checkout.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+          <h1 class="smartpos-page-title mb-0">Checkout</h1>
+          <span class="smartpos-text-secondary">Sample inventory</span>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12 col-xl-5">
+            <section class="card" aria-labelledby="checkout-products-title">
+              <header class="card-header">
+                <h2 class="card-title" id="checkout-products-title">Products</h2>
+              </header>
+
+              <div class="card-body">
+                <label class="form-label" for="checkout-search">
+                  Search by name or SKU
+                </label>
+                <input class="form-control mb-3" id="checkout-search" type="search">
+
+                <ul class="list-unstyled mb-0" id="checkout-products"></ul>
+              </div>
+            </section>
+          </div>
+
+          <div class="col-12 col-xl-7">
+            <section class="card" aria-labelledby="checkout-cart-title">
+              <header class="card-header">
+                <h2 class="card-title" id="checkout-cart-title">Cart</h2>
+              </header>
+
+              <div
+                class="table-responsive"
+                role="region"
+                aria-labelledby="checkout-cart-title"
+                tabindex="0"
+              >
+                <table class="table align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Product</th>
+                      <th scope="col" class="text-end">Unit price</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col" class="text-end">Total</th>
+                      <th scope="col"><span class="visually-hidden">Actions</span></th>
+                    </tr>
+                  </thead>
+                  <tbody id="checkout-cart"></tbody>
+                </table>
+              </div>
+
+              <div class="card-footer d-flex justify-content-between gap-3">
+                <strong>Cart total</strong>
+                <output
+                  class="fw-bold smartpos-text-numeric"
+                  id="checkout-total"
+                  aria-label="Cart total"
+                >৳0.00</output>
+              </div>
+
+              <form class="card-body border-top" id="checkout-payment-form">
+                <div class="row g-3 align-items-end">
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="checkout-cash">Cash received (৳)</label>
+                    <input
+                      class="form-control"
+                      id="checkout-cash"
+                      type="number"
+                      min="0"
+                      max="1000000"
+                      step="0.01"
+                      inputmode="decimal"
+                      aria-describedby="checkout-payment-hint"
+                      required
+                      disabled
+                    >
+                  </div>
+
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label d-block" for="checkout-change">Change due</label>
+                    <output
+                      class="d-block fw-semibold smartpos-text-numeric"
+                      id="checkout-change"
+                      for="checkout-cash"
+                    >—</output>
+                  </div>
+                </div>
+
+                <p class="form-text mb-2" id="checkout-payment-hint">
+                  Add an item to start a cash payment.
+                </p>
+
+                <button class="btn btn-primary" id="checkout-complete" type="submit" disabled>
+                  Complete Sale
+                </button>
+              </form>
+            </section>
+          </div>
+        </div>
+
+        <p class="mt-3 mb-0" id="checkout-status" role="status"></p>
+      </div>
+    </main>
+  </div>
+
+  <dialog
+    class="border-0 rounded p-0"
+    id="checkout-receipt"
+    aria-labelledby="checkout-receipt-title"
+  >
+    <section class="card">
+      <header class="card-header">
+        <h2 class="card-title" id="checkout-receipt-title">Receipt preview</h2>
+      </header>
+
+      <div class="card-body">
+        <p class="smartpos-text-secondary mb-3" id="checkout-receipt-date"></p>
+
+        <ul class="list-unstyled mb-3" id="checkout-receipt-items"></ul>
+
+        <dl class="row mb-0">
+          <dt class="col-6">Total</dt>
+          <dd class="col-6 text-end smartpos-text-numeric" id="checkout-receipt-total"></dd>
+
+          <dt class="col-6">Cash received</dt>
+          <dd class="col-6 text-end smartpos-text-numeric" id="checkout-receipt-cash"></dd>
+
+          <dt class="col-6">Change</dt>
+          <dd class="col-6 text-end smartpos-text-numeric mb-0" id="checkout-receipt-change"></dd>
+        </dl>
+      </div>
+
+      <footer class="card-footer">
+        <form method="dialog">
+          <button class="btn btn-secondary" type="submit" autofocus>Close receipt</button>
+        </form>
+      </footer>
+    </section>
+  </dialog>
+</body>
+</html>
