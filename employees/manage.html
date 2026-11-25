@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Add Employee | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/employees.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+          <h1 class="smartpos-page-title mb-0" id="employee-page-title">
+            Add Employee
+          </h1>
+          <a class="btn btn-secondary" href="./index.html">Back to Employee List</a>
+        </div>
+
+        <p class="mb-3" id="employee-status" role="status" hidden></p>
+
+        <section class="card" aria-labelledby="employee-form-title">
+          <header class="card-header">
+            <h2 class="card-title" id="employee-form-title">Employee details</h2>
+          </header>
+
+          <form id="employee-form" method="post">
+            <div class="card-body">
+              <p class="form-text mt-0 mb-3">Fields marked with * are required.</p>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-name">Full name *</label>
+                  <input
+                    class="form-control"
+                    id="employee-name"
+                    name="name"
+                    type="text"
+                    maxlength="120"
+                    required
+                  >
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-email">Email address *</label>
+                  <input
+                    class="form-control"
+                    id="employee-email"
+                    name="email"
+                    type="email"
+                    maxlength="254"
+                    required
+                  >
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-phone">Phone number</label>
+                  <input
+                    class="form-control"
+                    id="employee-phone"
+                    name="phone"
+                    type="tel"
+                    maxlength="30"
+                  >
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-role">Role *</label>
+                  <select class="form-select" id="employee-role" name="role" required>
+                    <option value="" selected disabled>Select a role</option>
+                    <option value="Cashier">Cashier</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Stock clerk">Stock clerk</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-shift">Shift *</label>
+                  <select class="form-select" id="employee-shift" name="shift" required>
+                    <option value="" selected disabled>Select a shift</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="employee-joining-date">Joining date *</label>
+                  <input
+                    class="form-control"
+                    id="employee-joining-date"
+                    name="joiningDate"
+                    type="date"
+                    required
+                  >
+                </div>
+              </div>
+            </div>
+
+            <footer class="card-footer d-flex flex-wrap gap-2">
+              <button class="btn btn-primary" id="employee-submit" type="submit" disabled>
+                Save Employee
+              </button>
+              <a class="btn btn-secondary" href="./index.html">Cancel</a>
+              <button class="btn btn-danger" id="employee-remove" type="button" hidden>
+                Remove Employee
+              </button>
+            </footer>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

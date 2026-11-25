@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Employee List | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/employees.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+          <h1 class="smartpos-page-title mb-0">Employee List</h1>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" id="employee-add" href="./manage.html">
+              Add Employee
+            </a>
+
+            <button
+              class="btn btn-secondary"
+              id="employee-edit"
+              type="button"
+              aria-expanded="false"
+              aria-controls="employee-rows employee-edit-details employee-remove-selected"
+              disabled
+            >
+              Edit Employee
+            </button>
+
+            <button
+              class="btn btn-secondary"
+              id="employee-edit-details"
+              type="button"
+              hidden
+              disabled
+            >
+              Edit Details
+            </button>
+
+            <button
+              class="btn btn-danger"
+              id="employee-remove-selected"
+              type="button"
+              hidden
+              disabled
+            >
+              Remove Employee
+            </button>
+          </div>
+        </div>
+
+        <p class="mb-3" id="employee-status" role="status" hidden></p>
+
+        <section class="card" aria-labelledby="employee-list-title">
+          <header class="card-header">
+            <h2 class="card-title" id="employee-list-title">Employees</h2>
+          </header>
+
+          <div
+            class="table-responsive"
+            role="region"
+            aria-labelledby="employee-list-title"
+            tabindex="0"
+          >
+            <table class="table table-hover align-middle mb-0">
+              <caption class="visually-hidden">
+                Choose Edit Employee to select a record for editing or removal.
+              </caption>
+
+              <thead>
+                <tr>
+                  <th scope="col" id="employee-select-heading" hidden>Select</th>
+                  <th scope="col">Full name</th>
+                  <th scope="col">Shift</th>
+                  <th scope="col">Joining date</th>
+                </tr>
+              </thead>
+
+              <tbody id="employee-rows">
+                <tr>
+                  <td colspan="3" class="smartpos-table-empty text-center py-4">
+                    Loading employees…
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="card-footer" id="employee-count">0 employees</footer>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
