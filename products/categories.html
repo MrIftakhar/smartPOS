@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Categories | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+          <h1 class="smartpos-page-title mb-0">Categories</h1>
+          <a class="btn btn-secondary" href="./index.html">Back to Products</a>
+        </div>
+
+        <section class="card" aria-labelledby="category-list-title">
+          <header class="card-header">
+            <h2 class="card-title" id="category-list-title">Category list</h2>
+          </header>
+
+          <div
+            class="table-responsive"
+            role="region"
+            aria-labelledby="category-list-title"
+            tabindex="0"
+          >
+            <table class="table table-hover align-middle mb-0">
+              <caption class="visually-hidden">
+                Sample product categories and their product counts
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col" class="text-end">Products</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Groceries</th>
+                  <td class="text-end smartpos-text-numeric">2</td>
+                </tr>
+                <tr>
+                  <th scope="row">Beverages</th>
+                  <td class="text-end smartpos-text-numeric">1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Household</th>
+                  <td class="text-end smartpos-text-numeric">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="card-footer">Showing 3 sample categories</footer>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

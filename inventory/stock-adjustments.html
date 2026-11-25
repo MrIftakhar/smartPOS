@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Stock Adjustments | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/form-preview.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+          <h1 class="smartpos-page-title mb-0">Stock Adjustments</h1>
+          <a class="btn btn-secondary" href="../products/index.html">Back to Products</a>
+        </div>
+
+        <section class="card" aria-labelledby="adjustment-title">
+          <header class="card-header">
+            <h2 class="card-title" id="adjustment-title">New adjustment</h2>
+          </header>
+
+          <form id="smartpos-form-preview" method="post">
+            <div class="card-body">
+              <p class="form-text mt-0 mb-3">All fields are required.</p>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="adjustment-product">Product</label>
+                  <select class="form-select" id="adjustment-product" name="product" required>
+                    <option value="" selected disabled>Select a product</option>
+                    <option value="RICE-001">Miniket rice (RICE-001)</option>
+                    <option value="OIL-001">Soybean oil (OIL-001)</option>
+                    <option value="DRINK-001">Orange juice (DRINK-001)</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="adjustment-direction">Adjustment type</label>
+                  <select class="form-select" id="adjustment-direction" name="direction" required>
+                    <option value="" selected disabled>Select an adjustment type</option>
+                    <option value="increase">Add stock</option>
+                    <option value="decrease">Remove stock</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="adjustment-quantity">Quantity</label>
+                  <input
+                    class="form-control"
+                    id="adjustment-quantity"
+                    name="quantity"
+                    type="number"
+                    min="1"
+                    step="1"
+                    inputmode="numeric"
+                    required
+                  >
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="adjustment-reason">Reason</label>
+                  <textarea
+                    class="form-control"
+                    id="adjustment-reason"
+                    name="reason"
+                    rows="3"
+                    maxlength="500"
+                    placeholder="e.g. Two damaged items found during the stock count"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <footer class="card-footer">
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" id="smartpos-form-submit" type="submit" disabled>
+                  Validate adjustment
+                </button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+              </div>
+
+              <p
+                class="smartpos-text-success mt-2 mb-0"
+                id="smartpos-form-status"
+                role="status"
+              ></p>
+            </footer>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
