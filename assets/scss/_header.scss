@@ -1,0 +1,96 @@
+/**
+ * @fileoverview Shared smartPOS top bar and account dropdown.
+ * @author Md Iftakhar Islam
+ */
+ /* Keep the shared top bar visible while the page scrolls. */
+[data-smartpos-header] {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.smartpos-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.75rem;
+  padding: 0.5rem clamp(0.75rem, 3vw, 1.5rem);
+  border-bottom: 1px solid var(--smartpos-header-border);
+  background-color: var(--smartpos-header-bg);
+  color: var(--smartpos-header-text);
+
+}
+
+.smartpos-header-toggle,
+.smartpos-header-account {
+  --bs-btn-color: var(--smartpos-header-text);
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-color: var(--smartpos-header-text);
+  --bs-btn-hover-bg: var(--smartpos-header-user-hover-bg);
+  --bs-btn-active-color: var(--smartpos-header-text);
+  --bs-btn-active-bg: var(--smartpos-header-user-hover-bg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+}
+
+.smartpos-header-toggle {
+  width: 2.75rem;
+  padding: 0;
+  color: var(--smartpos-header-icon-color);
+}
+
+.smartpos-header-account {
+  gap: 0.5rem;
+  padding: 0.25rem 0.625rem;
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+.smartpos-header-avatar {
+  display: grid;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: var(--smartpos-header-user-bg);
+  color: var(--smartpos-header-icon-color);
+}
+
+.smartpos-header-menu {
+  --bs-dropdown-min-width: 10.5rem;
+  --bs-dropdown-bg: var(--smartpos-color-surface);
+  --bs-dropdown-border-color: var(--smartpos-color-border);
+  --bs-dropdown-divider-bg: var(--smartpos-color-border);
+  --bs-dropdown-link-color: var(--smartpos-color-text);
+  --bs-dropdown-link-hover-color: var(--smartpos-color-text-strong);
+  --bs-dropdown-link-hover-bg: var(--smartpos-color-surface-hover);
+  --bs-dropdown-link-active-color: var(--smartpos-color-primary-text);
+  --bs-dropdown-link-active-bg: var(--smartpos-color-primary-subtle);
+  --bs-dropdown-link-disabled-color: var(--smartpos-color-disabled-text);
+
+  box-shadow: var(--smartpos-shadow-md);
+}
+
+.smartpos-header-logout,
+.smartpos-header-logout:hover,
+.smartpos-header-logout:focus,
+.smartpos-header-logout:active {
+  color: var(--smartpos-color-danger-text);
+}
+
+.smartpos-header :is(.btn, .dropdown-item):focus-visible {
+  outline: 2px solid var(--smartpos-color-focus);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.smartpos-header .dropdown-item:focus-visible {
+  outline-offset: -2px;
+}

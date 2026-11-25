@@ -1,0 +1,22 @@
+/**
+ * smartPOS admin template stylesheet.
+ * @author Md Iftakhar Islam
+ */
+@use "bootstrap/scss/bootstrap";
+@use "theme";
+@use "typography";
+@use "layout";
+@use "login";
+@use "header";
+@use "sidebar";
+@use "cards";
+@use "buttons";
+@use "forms";
+@use "tables";
+
+:root,
+[data-smartpos-theme] {
+  --bs-body-bg: var(--smartpos-color-canvas);
+  --bs-body-color: var(--smartpos-color-text);
+  --bs-border-color: var(--smartpos-color-border);
+}

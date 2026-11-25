@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Dashboard | smartPOS</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="assets/js/header.js"></script>
+  <script type="module" src="assets/js/sidebar.js"></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-4">
+          <div>
+            <h1 class="smartpos-page-title mb-1">Store overview</h1>
+            <p class="smartpos-page-description mb-0">
+              Track sales, stock, and register activity.
+            </p>
+          </div>
+          <span class="smartpos-text-secondary smartpos-text-sm">Sample data</span>
+        </div>
+
+        <section class="mb-4" aria-labelledby="dashboard-summary-title">
+          <h2 class="visually-hidden" id="dashboard-summary-title">Store summary</h2>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-3">
+            <div class="col">
+              <article class="card h-100">
+                <header class="card-header">
+                  <h3 class="card-title">Today’s sales</h3>
+                </header>
+                <div class="card-body">
+                  <p class="fs-4 fw-semibold smartpos-text-numeric mb-0">৳12,480.00</p>
+                </div>
+                <footer class="card-footer">Total from completed sales</footer>
+              </article>
+            </div>
+
+            <div class="col">
+              <article class="card h-100">
+                <header class="card-header">
+                  <h3 class="card-title">Transactions</h3>
+                </header>
+                <div class="card-body">
+                  <p class="fs-4 fw-semibold smartpos-text-numeric mb-0">24</p>
+                </div>
+                <footer class="card-footer">Completed today</footer>
+              </article>
+            </div>
+
+            <div class="col">
+              <article class="card h-100">
+                <header class="card-header">
+                  <h3 class="card-title">Low-stock products</h3>
+                </header>
+                <div class="card-body">
+                  <p class="fs-4 fw-semibold smartpos-text-warning smartpos-text-numeric mb-0">6</p>
+                </div>
+                <footer class="card-footer">At or below reorder level</footer>
+              </article>
+            </div>
+
+            <div class="col">
+              <article class="card h-100">
+                <header class="card-header">
+                  <h3 class="card-title">Current shift</h3>
+                </header>
+                <div class="card-body">
+                  <p class="fs-4 fw-semibold smartpos-text-success mb-0">Open</p>
+                </div>
+                <footer class="card-footer">Register 01 · Opened at 9:00 AM</footer>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="recent-sales-title">
+          <header class="card-header">
+            <h2 class="card-title" id="recent-sales-title">Recent Sales</h2>
+          </header>
+
+          <div
+            class="table-responsive"
+            role="region"
+            aria-labelledby="recent-sales-title"
+            tabindex="0"
+          >
+            <table class="table table-hover align-middle mb-0">
+              <caption class="visually-hidden">
+                Latest completed sales, ordered from newest to oldest
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Receipt</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Cashier</th>
+                  <th scope="col">Payment method</th>
+                  <th scope="col" class="text-end">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-nowrap">#SP-1024</th>
+                  <td class="text-nowrap"><time datetime="12:42">12:42 PM</time></td>
+                  <td class="text-nowrap">Rafi Hasan</td>
+                  <td>Cash</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric">৳850.00</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-nowrap">#SP-1023</th>
+                  <td class="text-nowrap"><time datetime="12:31">12:31 PM</time></td>
+                  <td class="text-nowrap">Rafi Hasan</td>
+                  <td>Cash</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric">৳320.00</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-nowrap">#SP-1022</th>
+                  <td class="text-nowrap"><time datetime="12:15">12:15 PM</time></td>
+                  <td class="text-nowrap">Nabila Ahmed</td>
+                  <td>Cash</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric">৳1,240.00</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-nowrap">#SP-1021</th>
+                  <td class="text-nowrap"><time datetime="11:58">11:58 AM</time></td>
+                  <td class="text-nowrap">Nabila Ahmed</td>
+                  <td>Cash</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric">৳575.00</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-nowrap">#SP-1020</th>
+                  <td class="text-nowrap"><time datetime="11:36">11:36 AM</time></td>
+                  <td class="text-nowrap">Rafi Hasan</td>
+                  <td>Cash</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric">৳415.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="card-footer">Showing the 5 most recent sales</footer>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

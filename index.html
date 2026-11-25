@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Sign in | smartPOS</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/login.js" defer></script>
+</head>
+<body>
+  <main class="smartpos-login">
+    <div class="smartpos-login-card">
+      <div class="smartpos-login-brand">
+        <span class="smartpos-login-brand-icon">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 3h14v18l-3.5-2-3.5 2-3.5-2L5 21V3Z"/>
+            <path d="M9 8h6M9 12h6"/>
+          </svg>
+        </span>
+        <span>smartPOS</span>
+      </div>
+
+      <h1 class="smartpos-page-title mb-2">Sign in</h1>
+      <p class="smartpos-text-secondary mb-3">Sign in to manage your shop.</p>
+
+      <form id="login-form" method="post">
+        <div class="mb-2">
+          <label class="form-label fw-semibold" for="login-email">
+            Email address
+          </label>
+          <input
+            class="form-control"
+            type="email"
+            id="login-email"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold" for="login-password">
+            Password
+          </label>
+
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="password"
+              id="login-password"
+              autocomplete="current-password"
+              required
+            >
+            <button
+              class="btn smartpos-password-toggle"
+              type="button"
+              id="password-toggle"
+              aria-controls="login-password"
+              hidden
+            ><span id="password-toggle-label">Show</span><span class="visually-hidden"> password</span></button>
+          </div>
+        </div>
+
+        <button
+          class="btn btn-primary smartpos-login-submit w-100"
+          type="submit"
+          id="login-submit"
+          disabled
+        >Sign in</button>
+
+        <p
+          class="smartpos-login-status smartpos-text-info mb-0"
+          id="login-status"
+          role="status"
+        ></p>
+
+        <noscript>
+          <p class="smartpos-text-secondary mt-3 mb-0">
+            Enable JavaScript to try the login preview.
+          </p>
+        </noscript>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

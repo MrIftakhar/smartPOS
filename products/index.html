@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Products | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/table-preview.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-4">
+          <div>
+            <h1 class="smartpos-page-title mb-1">Products</h1>
+            <p class="smartpos-page-description mb-0">
+              View product prices and stock levels.
+            </p>
+          </div>
+
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <span class="smartpos-text-secondary smartpos-text-sm">Sample data</span>
+            <a class="btn btn-primary" href="./create.html">Add Product</a>
+          </div>
+        </div>
+
+        <section class="card" aria-labelledby="product-list-title">
+          <header class="card-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <h2 class="card-title" id="product-list-title">Product list</h2>
+
+            <div>
+              <label class="visually-hidden" for="product-table-search">
+                Search products
+              </label>
+              <input
+                class="form-control form-control-sm"
+                id="product-table-search"
+                type="search"
+                placeholder="Search products"
+                aria-controls="product-table"
+                disabled
+              >
+            </div>
+          </header>
+
+          <div
+            class="table-responsive"
+            role="region"
+            aria-labelledby="product-list-title"
+            tabindex="0"
+          >
+            <table class="table table-hover align-middle mb-0" id="product-table">
+              <caption class="visually-hidden">
+                Product names, SKUs, categories, stock quantities, unit prices, and stock statuses
+              </caption>
+
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <button
+                      class="smartpos-table-sort"
+                      type="button"
+                      data-sort-column="0"
+                      disabled
+                    >
+                      Product <span aria-hidden="true">↕</span>
+                    </button>
+                  </th>
+
+                  <th scope="col">SKU</th>
+                  <th scope="col">Category</th>
+
+                  <th scope="col" class="text-end">
+                    <button
+                      class="smartpos-table-sort"
+                      type="button"
+                      data-sort-column="3"
+                      data-sort-numeric
+                      disabled
+                    >
+                      Stock <span aria-hidden="true">↕</span>
+                    </button>
+                  </th>
+
+                  <th scope="col" class="text-end">
+                    <button
+                      class="smartpos-table-sort"
+                      type="button"
+                      data-sort-column="4"
+                      data-sort-numeric
+                      disabled
+                    >
+                      Unit price <span aria-hidden="true">↕</span>
+                    </button>
+                  </th>
+
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <th scope="row">Miniket rice</th>
+                  <td class="text-nowrap">RICE-001</td>
+                  <td>Groceries</td>
+                  <td class="text-end smartpos-text-numeric">42</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric" data-sort-value="85">
+                    ৳85.00
+                  </td>
+                  <td class="text-nowrap smartpos-text-success">In stock</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Soybean oil</th>
+                  <td class="text-nowrap">OIL-001</td>
+                  <td>Groceries</td>
+                  <td class="text-end smartpos-text-numeric">4</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric" data-sort-value="185">
+                    ৳185.00
+                  </td>
+                  <td class="text-nowrap smartpos-text-warning">Low stock</td>
+                </tr>
+
+                <tr>
+                  <th scope="row">Orange juice</th>
+                  <td class="text-nowrap">DRINK-001</td>
+                  <td>Beverages</td>
+                  <td class="text-end smartpos-text-numeric">0</td>
+                  <td class="text-end text-nowrap smartpos-text-numeric" data-sort-value="65">
+                    ৳65.00
+                  </td>
+                  <td class="text-nowrap smartpos-text-danger">Out of stock</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <footer class="card-footer d-flex flex-wrap align-items-center justify-content-between gap-2">
+            <p class="mb-0" id="product-table-status" role="status">
+              Showing 3 sample products
+            </p>
+
+            <nav class="d-flex gap-2" aria-label="Product table pages">
+              <button
+                class="btn btn-secondary btn-sm"
+                id="product-table-previous"
+                type="button"
+                aria-controls="product-table"
+                disabled
+              >
+                Previous
+              </button>
+
+              <button
+                class="btn btn-secondary btn-sm"
+                id="product-table-next"
+                type="button"
+                aria-controls="product-table"
+                disabled
+              >
+                Next
+              </button>
+            </nav>
+          </footer>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

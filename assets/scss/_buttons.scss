@@ -1,0 +1,43 @@
+/**
+ * @fileoverview Shared smartPOS styles for Bootstrap buttons.
+ * @author Md Iftakhar Islam
+ */
+
+$smartpos-button-variants: primary, secondary, success, info, warning, danger;
+
+/* Map Bootstrap button states to the active smartPOS palette. */
+@each $variant in $smartpos-button-variants {
+  .btn-#{$variant} {
+    --bs-btn-color: var(--smartpos-color-on-#{$variant});
+    --bs-btn-bg: var(--smartpos-color-#{$variant});
+    --bs-btn-border-color: var(--smartpos-color-#{$variant});
+
+    --bs-btn-hover-color: var(--smartpos-color-on-#{$variant});
+    --bs-btn-hover-bg: var(--smartpos-color-#{$variant}-hover);
+    --bs-btn-hover-border-color: var(--smartpos-color-#{$variant}-hover);
+
+    --bs-btn-active-color: var(--smartpos-color-on-#{$variant});
+    --bs-btn-active-bg: var(--smartpos-color-#{$variant}-active);
+    --bs-btn-active-border-color: var(--smartpos-color-#{$variant}-active);
+
+    --bs-btn-disabled-color: var(--smartpos-color-disabled-text);
+    --bs-btn-disabled-bg: var(--smartpos-color-disabled-bg);
+    --bs-btn-disabled-border-color: var(--smartpos-color-border);
+    --bs-btn-disabled-opacity: 1;
+
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem var(--smartpos-color-focus-ring);
+
+    &:focus-visible {
+      outline: 2px solid var(--smartpos-color-focus);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* Give secondary buttons a visible border across interactive states. */
+.btn-secondary {
+  --bs-btn-border-width: 1px;
+  --bs-btn-border-color: var(--smartpos-color-border-strong);
+  --bs-btn-hover-border-color: var(--smartpos-color-border-strong);
+  --bs-btn-active-border-color: var(--smartpos-color-border-strong);
+}

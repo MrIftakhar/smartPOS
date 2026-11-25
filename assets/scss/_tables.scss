@@ -1,0 +1,57 @@
+/**
+ * @fileoverview Shared smartPOS table styles and sortable headings.
+ * @author Md Iftakhar Islam
+ */
+
+.table {
+  --bs-table-color: var(--smartpos-color-text);
+  --bs-table-bg: var(--smartpos-color-surface);
+  --bs-table-border-color: var(--smartpos-color-border);
+  --bs-table-striped-color: var(--smartpos-color-text);
+  --bs-table-striped-bg: var(--smartpos-color-surface-muted);
+  --bs-table-hover-color: var(--smartpos-color-text-strong);
+  --bs-table-hover-bg: var(--smartpos-color-surface-hover);
+}
+
+.table > thead {
+  --bs-table-color: var(--smartpos-color-heading);
+  --bs-table-bg: var(--smartpos-color-surface-muted);
+}
+
+.table > thead th {
+  font-weight: var(--smartpos-font-weight-semibold);
+  white-space: nowrap;
+}
+
+.table-responsive:focus-visible {
+  outline: 2px solid var(--smartpos-color-focus);
+  outline-offset: -2px;
+}
+
+.smartpos-table-empty {
+  color: var(--smartpos-color-text-secondary);
+}
+
+.smartpos-table-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.smartpos-table-sort:not(:disabled):hover {
+  color: var(--smartpos-color-primary-text);
+}
+
+.smartpos-table-sort:focus-visible {
+  outline: 2px solid var(--smartpos-color-focus);
+  outline-offset: 3px;
+}
+
+.smartpos-table-sort > span {
+  color: var(--smartpos-color-text-secondary);
+}

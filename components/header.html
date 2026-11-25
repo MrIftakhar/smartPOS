@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>smartPOS shared header</title>
+</head>
+<body>
+  <template id="smartpos-header-template">
+    <header class="smartpos-header">
+      <button
+        class="btn smartpos-header-toggle"
+        type="button"
+        data-smartpos-sidebar-toggle
+        aria-label="Toggle sidebar"
+      >
+        <svg
+          width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <div class="dropdown">
+        <button
+          class="btn dropdown-toggle smartpos-header-account"
+          type="button"
+          id="smartpos-account-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span class="smartpos-header-avatar" aria-hidden="true">
+            <svg
+              width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="3.5"/>
+              <path d="M5 20v-1a7 7 0 0 1 14 0v1"/>
+            </svg>
+          </span>
+          <span>Admin</span>
+        </button>
+
+        <ul
+          class="dropdown-menu dropdown-menu-end smartpos-header-menu"
+          aria-labelledby="smartpos-account-toggle"
+        >
+          <li>
+            <button class="dropdown-item" type="button" data-smartpos-account-page="Profile">
+              Profile
+            </button>
+          </li>
+          <li>
+            <button class="dropdown-item" type="button" data-smartpos-account-page="Settings">
+              Settings
+            </button>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li>
+            <button class="dropdown-item smartpos-header-logout" type="button" data-smartpos-logout>
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </template>
+</body>
+</html>

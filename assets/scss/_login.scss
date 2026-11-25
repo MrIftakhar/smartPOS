@@ -1,0 +1,99 @@
+/**
+ * @fileoverview Sign-in page styles for smartPOS.
+ * @author Md Iftakhar Islam
+ */
+
+.smartpos-login {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(1rem, 4vw, 2rem);
+  place-items: center;
+  background-color: var(--smartpos-color-canvas);
+  background-image: var(--smartpos-auth-cover-overlay);
+}
+
+.smartpos-login-card {
+  width: min(100%, 27rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--smartpos-color-border);
+  border-radius: 1rem;
+  background-color: var(--smartpos-color-surface);
+  box-shadow: var(--smartpos-shadow-lg);
+}
+
+.smartpos-login-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--smartpos-color-title);
+  font-size: var(--smartpos-font-size-xl);
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+.smartpos-login-brand-icon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 0.625rem;
+  background-color: var(--smartpos-color-primary-subtle);
+  color: var(--smartpos-color-primary-text);
+}
+
+.smartpos-login-card .form-control {
+  min-width: 0;
+  min-height: 2.75rem;
+  border-color: var(--smartpos-color-input-border);
+  background-color: var(--smartpos-color-surface);
+  color: var(--smartpos-color-text);
+  font-size: var(--smartpos-font-size-md);
+}
+
+.smartpos-login-card .form-control:focus {
+  border-color: var(--smartpos-color-focus);
+  box-shadow: none;
+}
+
+.smartpos-password-toggle {
+  --bs-btn-color: var(--smartpos-color-text-secondary);
+  --bs-btn-bg: var(--smartpos-color-surface-muted);
+  --bs-btn-border-color: var(--smartpos-color-input-border);
+  --bs-btn-hover-color: var(--smartpos-color-text-strong);
+  --bs-btn-hover-bg: var(--smartpos-color-surface-hover);
+  --bs-btn-hover-border-color: var(--smartpos-color-input-border);
+  --bs-btn-active-color: var(--smartpos-color-text-strong);
+  --bs-btn-active-bg: var(--smartpos-color-surface-hover);
+  --bs-btn-active-border-color: var(--smartpos-color-input-border);
+}
+
+.smartpos-login-submit {
+  --bs-btn-color: #0f172a;
+  --bs-btn-bg: var(--smartpos-color-primary);
+  --bs-btn-border-color: var(--smartpos-color-primary);
+  --bs-btn-hover-color: #0f172a;
+  --bs-btn-hover-bg: var(--smartpos-color-primary-hover);
+  --bs-btn-hover-border-color: var(--smartpos-color-primary-hover);
+  --bs-btn-active-color: #0f172a;
+  --bs-btn-active-bg: var(--smartpos-color-primary-active);
+  --bs-btn-active-border-color: var(--smartpos-color-primary-active);
+  --bs-btn-disabled-color: var(--smartpos-color-disabled-text);
+  --bs-btn-disabled-bg: var(--smartpos-color-disabled-bg);
+  --bs-btn-disabled-border-color: var(--smartpos-color-border);
+
+  min-height: 2.75rem;
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+.smartpos-password-toggle:focus-visible,
+.smartpos-login-submit:focus-visible {
+  outline: 2px solid var(--smartpos-color-focus);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.smartpos-login-status:not(:empty) {
+  margin-top: 1rem;
+}

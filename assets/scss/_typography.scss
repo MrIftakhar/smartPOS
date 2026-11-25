@@ -1,0 +1,231 @@
+/**
+ * @fileoverview Typography styles and text utilities for smartPOS.
+ * @author Md Iftakhar Islam
+ */
+
+:root {
+  /* Font families */
+  --smartpos-font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --smartpos-font-family-mono: Consolas, "Courier New", monospace;
+
+  /* Font sizes */
+  --smartpos-font-size-xs: 0.75rem;
+  --smartpos-font-size-sm: 0.8125rem;
+  --smartpos-font-size-base: 0.875rem;
+  --smartpos-font-size-md: 1rem;
+  --smartpos-font-size-lg: 1.125rem;
+  --smartpos-font-size-xl: 1.25rem;
+  --smartpos-font-size-2xl: 1.5rem;
+  --smartpos-font-size-3xl: 1.875rem;
+  --smartpos-font-size-4xl: 2.25rem;
+
+  /* Font weights */
+  --smartpos-font-weight-regular: 400;
+  --smartpos-font-weight-medium: 500;
+  --smartpos-font-weight-semibold: 600;
+  --smartpos-font-weight-bold: 700;
+
+  /* Line heights */
+  --smartpos-line-height-tight: 1.25;
+  --smartpos-line-height-base: 1.5;
+  --smartpos-line-height-relaxed: 1.75;
+}
+
+/* Apply smartPOS typography to Bootstrap's body styles and controls. */
+:root,
+[data-bs-theme] {
+  --bs-font-monospace: var(--smartpos-font-family-mono);
+  --bs-body-font-family: var(--smartpos-font-family);
+  --bs-body-font-size: var(--smartpos-font-size-base);
+  --bs-body-font-weight: var(--smartpos-font-weight-regular);
+  --bs-body-line-height: var(--smartpos-line-height-base);
+  --bs-heading-color: var(--smartpos-color-heading);
+}
+
+/* Native headings and Bootstrap heading classes share the same scale. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: var(--smartpos-color-heading);
+  font-weight: var(--smartpos-font-weight-semibold);
+  line-height: var(--smartpos-line-height-tight);
+  overflow-wrap: break-word;
+}
+
+h1,
+.h1 {
+  font-size: var(--smartpos-font-size-3xl);
+}
+
+h2,
+.h2 {
+  font-size: var(--smartpos-font-size-2xl);
+}
+
+h3,
+.h3 {
+  font-size: var(--smartpos-font-size-xl);
+}
+
+h4,
+.h4 {
+  font-size: var(--smartpos-font-size-lg);
+}
+
+h5,
+.h5 {
+  font-size: var(--smartpos-font-size-md);
+}
+
+h6,
+.h6 {
+  font-size: var(--smartpos-font-size-base);
+}
+
+/* Common text elements */
+p {
+  overflow-wrap: break-word;
+}
+
+small,
+.small {
+  font-size: var(--smartpos-font-size-sm);
+}
+
+strong,
+b {
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+/* Monospace text and code blocks */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--smartpos-font-family-mono);
+}
+
+code,
+kbd,
+samp {
+  font-size: 0.875em;
+}
+
+pre {
+  overflow-x: auto;
+  font-size: var(--smartpos-font-size-sm);
+  line-height: var(--smartpos-line-height-base);
+}
+
+pre code {
+  font-size: inherit;
+}
+
+/* Page and component headings */
+.smartpos-page-title {
+  color: var(--smartpos-color-title);
+  font-size: var(--smartpos-font-size-2xl);
+  font-weight: var(--smartpos-font-weight-semibold);
+  line-height: var(--smartpos-line-height-tight);
+}
+
+.smartpos-page-description {
+  margin-block-start: 0.375rem;
+  color: var(--smartpos-color-text-secondary);
+}
+
+.smartpos-section-title {
+  color: var(--smartpos-color-heading);
+  font-size: var(--smartpos-font-size-lg);
+  font-weight: var(--smartpos-font-weight-semibold);
+  line-height: var(--smartpos-line-height-tight);
+}
+
+/* Theme-aware text colors */
+.smartpos-text-primary {
+  color: var(--smartpos-color-primary-text);
+}
+
+.smartpos-text-secondary {
+  color: var(--smartpos-color-text-secondary);
+}
+
+.smartpos-text-muted {
+  color: var(--smartpos-color-text-muted);
+}
+
+.smartpos-text-strong {
+  color: var(--smartpos-color-text-strong);
+}
+
+.smartpos-text-success {
+  color: var(--smartpos-color-success-text);
+}
+
+.smartpos-text-info {
+  color: var(--smartpos-color-info-text);
+}
+
+.smartpos-text-warning {
+  color: var(--smartpos-color-warning-text);
+}
+
+.smartpos-text-danger {
+  color: var(--smartpos-color-danger-text);
+}
+
+/* Text sizes */
+.smartpos-text-xs {
+  font-size: var(--smartpos-font-size-xs);
+}
+
+.smartpos-text-sm {
+  font-size: var(--smartpos-font-size-sm);
+}
+
+.smartpos-text-base {
+  font-size: var(--smartpos-font-size-base);
+}
+
+.smartpos-text-md {
+  font-size: var(--smartpos-font-size-md);
+}
+
+.smartpos-text-lg {
+  font-size: var(--smartpos-font-size-lg);
+}
+
+/* Font weights */
+.smartpos-fw-regular {
+  font-weight: var(--smartpos-font-weight-regular);
+}
+
+.smartpos-fw-medium {
+  font-weight: var(--smartpos-font-weight-medium);
+}
+
+.smartpos-fw-semibold {
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+.smartpos-fw-bold {
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+/* Reading and numeric text */
+.smartpos-text-relaxed {
+  line-height: var(--smartpos-line-height-relaxed);
+}
+
+.smartpos-text-numeric {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>smartPOS shared sidebar</title>
+</head>
+<body>
+  <template id="smartpos-sidebar-template">
+    <aside
+      class="offcanvas-lg offcanvas-start smartpos-sidebar"
+      id="smartpos-sidebar"
+      tabindex="-1"
+      aria-labelledby="smartpos-sidebar-title"
+    >
+      <div class="smartpos-sidebar-brand">
+        <div class="smartpos-sidebar-brand-content">
+          <svg
+            width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.75"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          >
+            <path d="M5 3h14v18l-3.5-2-3.5 2-3.5-2L5 21V3Z"/>
+            <path d="M9 8h6M9 12h6"/>
+          </svg>
+          <span class="smartpos-sidebar-label" id="smartpos-sidebar-title">
+            smartPOS
+          </span>
+        </div>
+
+        <button
+          class="btn smartpos-sidebar-close d-lg-none"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          data-bs-target="#smartpos-sidebar"
+          aria-label="Close navigation"
+        >
+          <svg
+            width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M18 6 6 18"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="smartpos-sidebar-nav" aria-label="Main navigation">
+        <ul class="smartpos-sidebar-list">
+          <li>
+            <a
+              class="smartpos-sidebar-link smartpos-sidebar-root-link"
+              href="./dashboard.html"
+              data-smartpos-route
+              title="Dashboard"
+            >
+              <svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.75" aria-hidden="true"
+              >
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+              <span class="smartpos-sidebar-label">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <!-- Level 1 -->
+            <details class="smartpos-sidebar-group" data-smartpos-sidebar-flyout>
+              <summary class="smartpos-sidebar-link smartpos-sidebar-root-link">
+                <svg
+                  width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                >
+                  <path d="m12 3 9 5v8l-9 5-9-5V8l9-5Z"/>
+                  <path d="m3 8 9 5 9-5M12 13v8"/>
+                </svg>
+                <span class="smartpos-sidebar-label">Inventory</span>
+              </summary>
+
+              <div class="smartpos-sidebar-flyout">
+                <p class="smartpos-sidebar-flyout-title mb-0" aria-hidden="true">
+                  Inventory
+                </p>
+
+                <ul class="smartpos-sidebar-list smartpos-sidebar-submenu">
+                  <li>
+                    <!-- Level 2 -->
+                    <details class="smartpos-sidebar-group">
+                      <summary class="smartpos-sidebar-link">Products</summary>
+
+                      <!-- Level 3 -->
+                      <ul class="smartpos-sidebar-list smartpos-sidebar-submenu">
+                        <li>
+                          <a
+                            class="smartpos-sidebar-link"
+                            href="./products/index.html"
+                            data-smartpos-route
+                          >
+                            All Products
+                          </a>
+                        </li>
+                        <li>
+                          <button class="smartpos-sidebar-link" type="button" disabled>
+                            Categories
+                          </button>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+
+                  <li>
+                    <button class="smartpos-sidebar-link" type="button" disabled>
+                      Stock Adjustments
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </li>
+
+          <li>
+            <details class="smartpos-sidebar-group" data-smartpos-sidebar-flyout>
+              <summary class="smartpos-sidebar-link smartpos-sidebar-root-link">
+                <svg
+                  width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.75"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M3 9h18M9 9v12"/>
+                </svg>
+                <span class="smartpos-sidebar-label">Components</span>
+              </summary>
+
+              <div class="smartpos-sidebar-flyout">
+                <p class="smartpos-sidebar-flyout-title mb-0" aria-hidden="true">
+                  Components
+                </p>
+
+                <ul class="smartpos-sidebar-list smartpos-sidebar-submenu">
+                  <li>
+                    <a
+                      class="smartpos-sidebar-link"
+                      href="./components/card.html"
+                      data-smartpos-route
+                    >
+                      Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="smartpos-sidebar-link"
+                      href="./components/button.html"
+                      data-smartpos-route
+                    >
+                      Buttons
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="smartpos-sidebar-link"
+                      href="./components/form.html"
+                      data-smartpos-route
+                    >
+                      Forms
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="smartpos-sidebar-link"
+                      href="./components/table.html"
+                      data-smartpos-route
+                    >
+                      Tables
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </template>
+</body>
+</html>

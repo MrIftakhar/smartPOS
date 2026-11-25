@@ -1,0 +1,230 @@
+/**
+ * @fileoverview Responsive sidebar, icon rail, and nested navigation for smartPOS.
+ * @author Md Iftakhar Islam
+ */
+
+:root {
+  --smartpos-sidebar-width: 15rem;
+  --smartpos-sidebar-rail-width: 4.5rem;
+  --smartpos-sidebar-flyout-width: 14rem;
+  --smartpos-header-height: 3.75rem;
+}
+
+.smartpos-dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - var(--smartpos-header-height));
+  min-height: calc(100dvh - var(--smartpos-header-height));
+}
+
+.smartpos-dashboard-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.smartpos-sidebar {
+  --bs-offcanvas-width: min(18rem, 88vw);
+  --bs-offcanvas-bg: var(--smartpos-sidebar-bg);
+  --bs-offcanvas-color: var(--smartpos-sidebar-text);
+  --bs-offcanvas-border-color: var(--smartpos-sidebar-border);
+
+  overflow-y: auto;
+  color: var(--smartpos-sidebar-text);
+}
+
+.smartpos-sidebar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.75rem;
+  padding: 0.75rem 1rem;
+  font-size: var(--smartpos-font-size-xl);
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+.smartpos-sidebar-brand-content {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.smartpos-sidebar-close {
+  --bs-btn-color: var(--smartpos-sidebar-text);
+  --bs-btn-hover-color: var(--smartpos-sidebar-text);
+  --bs-btn-hover-bg: var(--smartpos-sidebar-link-hover-bg);
+  --bs-btn-active-color: var(--smartpos-sidebar-text);
+  --bs-btn-active-bg: var(--smartpos-sidebar-link-active-bg);
+
+  display: inline-grid;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  place-items: center;
+}
+
+.smartpos-sidebar-nav {
+  padding: 0 0.75rem 1rem;
+}
+
+.smartpos-sidebar-list {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.smartpos-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--smartpos-sidebar-link-color);
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+}
+
+.smartpos-sidebar-link svg,
+.smartpos-sidebar-brand-content svg {
+  flex: none;
+}
+
+.smartpos-sidebar-link:not(:disabled):hover {
+  background-color: var(--smartpos-sidebar-link-hover-bg);
+  color: var(--smartpos-sidebar-link-hover-color);
+}
+
+.smartpos-sidebar-link[aria-current="page"] {
+  background-color: var(--smartpos-sidebar-link-active-bg);
+  color: var(--smartpos-sidebar-link-active-color);
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+.smartpos-sidebar-link:disabled {
+  color: var(--smartpos-sidebar-text-muted);
+}
+
+.smartpos-sidebar-link:focus-visible,
+.smartpos-sidebar-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.smartpos-sidebar-group > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.smartpos-sidebar-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.smartpos-sidebar-group > summary::after {
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-inline-start: auto;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.smartpos-sidebar-group[open] > summary::after {
+  transform: rotate(45deg);
+}
+
+.smartpos-sidebar-submenu {
+  margin-block-start: 0.25rem;
+  margin-inline-start: 1.125rem;
+  padding-inline-start: 0.5rem;
+  border-inline-start: 1px solid var(--smartpos-sidebar-link-active-bg);
+}
+
+.smartpos-sidebar-flyout-title {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .smartpos-sidebar.offcanvas-lg {
+    position: sticky;
+    top: var(--smartpos-header-height);
+    width: var(--smartpos-sidebar-width);
+    height: calc(100vh - var(--smartpos-header-height));
+    height: calc(100dvh - var(--smartpos-header-height));
+    background-color: var(--smartpos-sidebar-bg) !important;
+    box-shadow: var(--smartpos-sidebar-shadow);
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar.offcanvas-lg {
+    z-index: 1010;
+    width: var(--smartpos-sidebar-rail-width);
+    overflow: visible;
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-brand {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-nav {
+    padding-inline: 0.5rem;
+  }
+
+  /* Hide labels visually while keeping accessible names for the icons. */
+  .smartpos-sidebar-collapsed .smartpos-sidebar-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-root-link {
+    justify-content: center;
+    padding-inline: 0;
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-root-link::after {
+    display: none;
+  }
+
+  .smartpos-sidebar-collapsed [data-smartpos-sidebar-flyout] {
+    position: relative;
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-flyout {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 100%;
+    width: var(--smartpos-sidebar-flyout-width);
+    max-height: calc(100vh - var(--smartpos-header-height) - 7rem);
+    max-height: calc(100dvh - var(--smartpos-header-height) - 7rem);
+    padding: 0.5rem;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    background-color: var(--smartpos-sidebar-bg);
+    box-shadow: var(--smartpos-shadow-md);
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-flyout-title {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-weight: var(--smartpos-font-weight-semibold);
+  }
+
+  .smartpos-sidebar-collapsed .smartpos-sidebar-flyout > .smartpos-sidebar-submenu {
+    margin-inline-start: 0;
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Forms | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+  <script src="../assets/js/form-preview.js" defer></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <h1 class="smartpos-page-title mb-4">Forms</h1>
+
+        <section class="card" aria-labelledby="product-form-title">
+          <header class="card-header">
+            <h2 class="card-title" id="product-form-title">Product details</h2>
+          </header>
+
+          <form id="smartpos-form-preview" method="post">
+            <div class="card-body">
+              <p class="form-text mt-0 mb-3">Fields marked with * are required.</p>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="product-name">Product name *</label>
+                  <input
+                    class="form-control"
+                    id="product-name"
+                    type="text"
+                    placeholder="e.g. Miniket rice"
+                    required
+                  >
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="product-sku">SKU *</label>
+                  <input
+                    class="form-control"
+                    id="product-sku"
+                    type="text"
+                    placeholder="e.g. RICE-001"
+                    aria-describedby="product-sku-help"
+                    required
+                  >
+                  <div class="form-text" id="product-sku-help">
+                    Enter a unique code for the product.
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="product-category">Category *</label>
+                  <select class="form-select" id="product-category" required>
+                    <option value="" selected disabled>Select a category</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="household">Household</option>
+                  </select>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="product-price">Unit price (৳) *</label>
+                  <input
+                    class="form-control"
+                    id="product-price"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="0.00"
+                    required
+                  >
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="product-notes">Notes</label>
+                  <textarea class="form-control" id="product-notes" rows="3"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" id="product-active" type="checkbox" checked>
+                    <label class="form-check-label" for="product-active">
+                      Available for sale
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <footer class="card-footer">
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-primary" id="smartpos-form-submit" type="submit" disabled>
+                  Validate form
+                </button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+              </div>
+              <p class="smartpos-text-success mt-2 mb-0" id="smartpos-form-status" role="status"></p>
+            </footer>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

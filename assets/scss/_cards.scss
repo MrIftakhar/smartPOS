@@ -1,0 +1,30 @@
+/**
+ * @fileoverview Shared smartPOS styles for Bootstrap cards.
+ * @author Md Iftakhar Islam
+ */
+
+.card {
+  --bs-card-color: var(--smartpos-color-text);
+  --bs-card-bg: var(--smartpos-color-surface);
+  --bs-card-border-color: var(--smartpos-card-divider-color);
+  --bs-card-border-radius: 0.75rem;
+  --bs-card-cap-bg: var(--smartpos-color-surface-muted);
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-cap-padding-y: 0.75rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-spacer-y: 1rem;
+
+  box-shadow: var(--smartpos-card-shadow);
+}
+
+.card-header .card-title {
+  margin-bottom: 0;
+  color: var(--smartpos-color-heading);
+  font-size: var(--smartpos-font-size-md);
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+.card-footer {
+  color: var(--smartpos-color-text-secondary);
+  font-size: var(--smartpos-font-size-sm);
+}

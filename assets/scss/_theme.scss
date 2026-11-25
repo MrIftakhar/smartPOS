@@ -1,0 +1,300 @@
+/**
+ * smartPOS light and dark theme variables.
+ *
+ * @author Md Iftakhar Islam
+ * @license MIT
+ * Palette adapted from TS Admin's default theme.
+ */
+
+:root,
+[data-smartpos-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --smartpos-color-canvas: #f2f2f7;
+  --smartpos-color-surface: #ffffff;
+  --smartpos-color-surface-muted: #f1f5f9;
+  --smartpos-color-surface-hover: #e2e8f0;
+  --smartpos-select-option-hover-bg: #e2e8f0;
+  --smartpos-select-option-divider: #e2e8f0;
+
+  /* Text */
+  --smartpos-color-text: #414c5b;
+  --smartpos-color-text-secondary: #334155;
+  --smartpos-color-text-muted: #878a99;
+  --smartpos-color-text-strong: #212529;
+  --smartpos-color-heading: #495057;
+  --smartpos-color-title: #0f172a;
+
+  /* Breadcrumbs */
+  --smartpos-breadcrumb-parent-color: #475569;
+  --smartpos-breadcrumb-muted-color: #94a3b8;
+
+  /* Borders */
+  --smartpos-color-border: #e2e8f0;
+  --smartpos-color-border-strong: #cbd5e1;
+  --smartpos-color-input-border: #ced4da;
+  --smartpos-multiselect-tag-border: #299cdb54;
+
+  /* Primary */
+  --smartpos-color-primary: #299cdb;
+  --smartpos-color-primary-hover: #2385ba;
+  --smartpos-color-primary-active: #2385ba;
+  --smartpos-color-on-primary: #ffffff;
+  --smartpos-color-primary-subtle: rgb(41 156 219 / 14%);
+  --smartpos-color-primary-text: #1868ae;
+
+  /* Secondary */
+  --smartpos-color-secondary: #f1f5f9;
+  --smartpos-color-secondary-hover: #e2e8f0;
+  --smartpos-color-secondary-active: #cbd5e1;
+  --smartpos-color-on-secondary: #475569;
+  --smartpos-color-secondary-subtle: #f8fafc;
+  --smartpos-color-secondary-text: #334155;
+
+  /* Success */
+  --smartpos-color-success: #10b981;
+  --smartpos-color-success-hover: #059669;
+  --smartpos-color-success-active: #059669;
+  --smartpos-color-on-success: #ffffff;
+  --smartpos-color-success-subtle: rgb(16 185 129 / 14%);
+  --smartpos-color-success-text: #047857;
+
+  /* Info */
+  --smartpos-color-info: #299cdb;
+  --smartpos-color-info-hover: #2385ba;
+  --smartpos-color-info-active: #2385ba;
+  --smartpos-color-on-info: #ffffff;
+  --smartpos-color-info-subtle: rgb(41 156 219 / 14%);
+  --smartpos-color-info-text: #1868ae;
+
+  /* Warning */
+  --smartpos-color-warning: #f59e0b;
+  --smartpos-color-warning-hover: #d97706;
+  --smartpos-color-warning-active: #d97706;
+  --smartpos-color-on-warning: #0f172a;
+  --smartpos-color-warning-subtle: rgb(245 158 11 / 14%);
+  --smartpos-color-warning-text: #92400e;
+
+  /* Danger */
+  --smartpos-color-danger: #ef4444;
+  --smartpos-color-danger-hover: #dc2626;
+  --smartpos-color-danger-active: #dc2626;
+  --smartpos-color-on-danger: #ffffff;
+  --smartpos-color-danger-subtle: rgb(239 68 68 / 14%);
+  --smartpos-color-danger-text: #b91c1c;
+
+  /* Interaction */
+  --smartpos-color-focus: #1868ae;
+  --smartpos-color-focus-ring: rgb(41 156 219 / 25%);
+  --smartpos-color-disabled-bg: #f1f5f9;
+  --smartpos-color-disabled-text: #64748b;
+  --smartpos-color-overlay: rgb(15 23 42 / 50%);
+
+  /* Sidebar */
+  --smartpos-sidebar-bg: #1e293b;
+  --smartpos-sidebar-text: #f8fafc;
+  --smartpos-sidebar-text-muted: #94a3b8;
+  --smartpos-sidebar-border: #1e293b;
+  --smartpos-sidebar-link-color: #f8fafc;
+  --smartpos-sidebar-link-hover-color: #f8fafc;
+  --smartpos-sidebar-link-hover-bg: #475569;
+  --smartpos-sidebar-link-active-color: #f8fafc;
+  --smartpos-sidebar-link-active-bg: #334155;
+  --smartpos-sidebar-shadow: 0 2px 4px rgb(15 34 58 / 12%);
+
+  /* Header */
+  --smartpos-header-bg: #ffffff;
+  --smartpos-header-text: #64748b;
+  --smartpos-header-border: #e2e8f0;
+  --smartpos-header-icon-color: #64748b;
+  --smartpos-header-user-bg: #f1f5f9;
+  --smartpos-header-user-hover-bg: #e2e8f0;
+  --smartpos-header-shadow: 0 3px 3px rgb(56 65 74 / 10%);
+
+  /* Mobile header */
+  --smartpos-header-mobile-bg: var(--smartpos-sidebar-bg);
+  --smartpos-header-mobile-text: var(--smartpos-sidebar-text);
+  --smartpos-header-mobile-icon-color: var(--smartpos-sidebar-text);
+  --smartpos-header-mobile-border: var(--smartpos-sidebar-border);
+  --smartpos-header-mobile-icon-hover-bg: var(
+    --smartpos-sidebar-link-active-bg
+  );
+  --smartpos-header-mobile-avatar-bg: var(--smartpos-sidebar-link-active-bg);
+  --smartpos-header-mobile-avatar-border: var(--smartpos-sidebar-link-hover-bg);
+
+  /* Shadows */
+  --smartpos-shadow-sm: 0 3px 3px rgb(56 65 74 / 10%);
+  --smartpos-shadow-md: 0 5px 10px rgb(30 32 37 / 12%);
+  --smartpos-shadow-lg: 0 5px 10px rgb(30 32 37 / 12%);
+
+  /* Footer */
+  --smartpos-footer-bg: var(--smartpos-color-surface);
+  --smartpos-footer-text: var(--smartpos-color-text-muted);
+  --smartpos-footer-border: var(--smartpos-color-border);
+  --smartpos-footer-brand-color: var(--smartpos-color-primary-text);
+
+  /* Cards */
+  --smartpos-card-shadow: 0 3px 3px rgb(56 65 74 / 10%);
+  --smartpos-card-divider-color: #e2e8f0;
+
+  /* Date picker month panel */
+  --smartpos-datepicker-month-panel-bg: #1d4357;
+  --smartpos-datepicker-month-panel-border: #1d4357;
+  --smartpos-datepicker-month-hover-bg: #2a566d;
+  --smartpos-datepicker-month-hover-text: #ffffff;
+
+  /* Authentication */
+  --smartpos-auth-cover-overlay: linear-gradient(
+    104.1deg,
+    rgb(0 61 100 / 90%) 13.6%,
+    rgb(47 127 164 / 90%) 49.4%,
+    rgb(30 198 198 / 90%) 93.3%
+  );
+}
+
+[data-smartpos-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --smartpos-color-canvas: #0f172a;
+  --smartpos-color-surface: #1e293b;
+  --smartpos-color-surface-muted: #273449;
+  --smartpos-color-surface-hover: #334155;
+  --smartpos-select-option-hover-bg: #334155;
+  --smartpos-select-option-divider: #334155;
+
+  /* Text */
+  --smartpos-color-text: #e2e8f0;
+  --smartpos-color-text-secondary: #cbd5e1;
+  --smartpos-color-text-muted: #94a3b8;
+  --smartpos-color-text-strong: #f1f5f9;
+  --smartpos-color-heading: #e2e8f0;
+  --smartpos-color-title: #f8fafc;
+
+  /* Breadcrumbs */
+  --smartpos-breadcrumb-parent-color: #cbd5e1;
+  --smartpos-breadcrumb-muted-color: #94a3b8;
+
+  /* Borders */
+  --smartpos-color-border: #334155;
+  --smartpos-color-border-strong: #64748b;
+  --smartpos-color-input-border: #475569;
+  --smartpos-multiselect-tag-border: #299cdb54;
+
+  /* Primary */
+  --smartpos-color-primary: #299cdb;
+  --smartpos-color-primary-hover: #54b0e2;
+  --smartpos-color-primary-active: #54b0e2;
+  --smartpos-color-on-primary: #ffffff;
+  --smartpos-color-primary-subtle: rgb(41 156 219 / 18%);
+  --smartpos-color-primary-text: #83c7ed;
+
+  /* Secondary */
+  --smartpos-color-secondary: #273449;
+  --smartpos-color-secondary-hover: #334155;
+  --smartpos-color-secondary-active: #475569;
+  --smartpos-color-on-secondary: #e2e8f0;
+  --smartpos-color-secondary-subtle: #273449;
+  --smartpos-color-secondary-text: #cbd5e1;
+
+  /* Success */
+  --smartpos-color-success: #10b981;
+  --smartpos-color-success-hover: #34d399;
+  --smartpos-color-success-active: #34d399;
+  --smartpos-color-on-success: #ffffff;
+  --smartpos-color-success-subtle: rgb(16 185 129 / 18%);
+  --smartpos-color-success-text: #6ee7b7;
+
+  /* Info */
+  --smartpos-color-info: #299cdb;
+  --smartpos-color-info-hover: #54b0e2;
+  --smartpos-color-info-active: #54b0e2;
+  --smartpos-color-on-info: #ffffff;
+  --smartpos-color-info-subtle: rgb(41 156 219 / 18%);
+  --smartpos-color-info-text: #83c7ed;
+
+  /* Warning */
+  --smartpos-color-warning: #f59e0b;
+  --smartpos-color-warning-hover: #fbbf24;
+  --smartpos-color-warning-active: #fbbf24;
+  --smartpos-color-on-warning: #0f172a;
+  --smartpos-color-warning-subtle: rgb(245 158 11 / 18%);
+  --smartpos-color-warning-text: #fcd34d;
+
+  /* Danger */
+  --smartpos-color-danger: #ef4444;
+  --smartpos-color-danger-hover: #f87171;
+  --smartpos-color-danger-active: #f87171;
+  --smartpos-color-on-danger: #ffffff;
+  --smartpos-color-danger-subtle: rgb(239 68 68 / 18%);
+  --smartpos-color-danger-text: #fca5a5;
+
+  /* Interaction */
+  --smartpos-color-focus: #83c7ed;
+  --smartpos-color-focus-ring: rgb(41 156 219 / 30%);
+  --smartpos-color-disabled-bg: #273449;
+  --smartpos-color-disabled-text: #94a3b8;
+  --smartpos-color-overlay: rgb(0 0 0 / 65%);
+
+  /* Sidebar */
+  --smartpos-sidebar-bg: #1e293b;
+  --smartpos-sidebar-text: #f8fafc;
+  --smartpos-sidebar-text-muted: #94a3b8;
+  --smartpos-sidebar-border: #1e293b;
+  --smartpos-sidebar-link-color: #f8fafc;
+  --smartpos-sidebar-link-hover-color: #f8fafc;
+  --smartpos-sidebar-link-hover-bg: #475569;
+  --smartpos-sidebar-link-active-color: #f8fafc;
+  --smartpos-sidebar-link-active-bg: #334155;
+  --smartpos-sidebar-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+
+  /* Header */
+  --smartpos-header-bg: #1e293b;
+  --smartpos-header-text: #e2e8f0;
+  --smartpos-header-border: #334155;
+  --smartpos-header-icon-color: #94a3b8;
+  --smartpos-header-user-bg: #273449;
+  --smartpos-header-user-hover-bg: #334155;
+  --smartpos-header-shadow: 0 3px 3px rgb(0 0 0 / 20%);
+
+  /* Mobile header */
+  --smartpos-header-mobile-bg: var(--smartpos-sidebar-bg);
+  --smartpos-header-mobile-text: var(--smartpos-sidebar-text);
+  --smartpos-header-mobile-icon-color: var(--smartpos-sidebar-text);
+  --smartpos-header-mobile-border: var(--smartpos-sidebar-border);
+  --smartpos-header-mobile-icon-hover-bg: var(
+    --smartpos-sidebar-link-active-bg
+  );
+  --smartpos-header-mobile-avatar-bg: var(--smartpos-sidebar-link-active-bg);
+  --smartpos-header-mobile-avatar-border: var(--smartpos-sidebar-link-hover-bg);
+
+  /* Shadows */
+  --smartpos-shadow-sm: 0 3px 3px rgb(0 0 0 / 20%);
+  --smartpos-shadow-md: 0 5px 10px rgb(0 0 0 / 25%);
+  --smartpos-shadow-lg: 0 5px 10px rgb(0 0 0 / 30%);
+
+  /* Footer */
+  --smartpos-footer-bg: var(--smartpos-color-surface);
+  --smartpos-footer-text: var(--smartpos-color-text-muted);
+  --smartpos-footer-border: var(--smartpos-color-border);
+  --smartpos-footer-brand-color: var(--smartpos-color-primary-text);
+
+  /* Cards */
+  --smartpos-card-shadow: 0 3px 3px rgb(0 0 0 / 20%);
+  --smartpos-card-divider-color: #334155;
+
+  /* Date picker month panel */
+  --smartpos-datepicker-month-panel-bg: #1d4357;
+  --smartpos-datepicker-month-panel-border: #1d4357;
+  --smartpos-datepicker-month-hover-bg: #2a566d;
+  --smartpos-datepicker-month-hover-text: #ffffff;
+
+  /* Authentication */
+  --smartpos-auth-cover-overlay: linear-gradient(
+    104.1deg,
+    rgb(15 23 42 / 95%) 13.6%,
+    rgb(29 67 87 / 92%) 49.4%,
+    rgb(15 118 110 / 90%) 93.3%
+  );
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-smartpos-theme="light" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Md Iftakhar Islam">
+  <title>Buttons | smartPOS</title>
+
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="../assets/js/header.js"></script>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+</head>
+<body>
+  <div data-smartpos-header></div>
+
+  <div class="smartpos-dashboard-layout">
+    <div data-smartpos-sidebar></div>
+
+    <main class="smartpos-dashboard-content" id="main-content">
+      <div class="container-fluid px-3 px-md-4 py-4">
+        <h1 class="smartpos-page-title mb-4">Buttons</h1>
+
+        <section class="card mb-3" aria-labelledby="button-variants-title">
+          <header class="card-header">
+            <h2 class="card-title" id="button-variants-title">Variants</h2>
+          </header>
+          <div class="card-body d-flex flex-wrap gap-2">
+            <button class="btn btn-primary" type="button">Primary</button>
+            <button class="btn btn-secondary" type="button">Secondary</button>
+            <button class="btn btn-success" type="button">Success</button>
+            <button class="btn btn-info" type="button">Info</button>
+            <button class="btn btn-warning" type="button">Warning</button>
+            <button class="btn btn-danger" type="button">Danger</button>
+          </div>
+        </section>
+
+        <section class="card mb-3" aria-labelledby="button-sizes-title">
+          <header class="card-header">
+            <h2 class="card-title" id="button-sizes-title">Sizes</h2>
+          </header>
+          <div class="card-body d-flex flex-wrap align-items-center gap-2">
+            <button class="btn btn-primary btn-sm" type="button">Small</button>
+            <button class="btn btn-primary" type="button">Default</button>
+            <button class="btn btn-primary btn-lg" type="button">Large</button>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="button-states-title">
+          <header class="card-header">
+            <h2 class="card-title" id="button-states-title">States</h2>
+          </header>
+          <div class="card-body d-flex flex-wrap gap-2">
+            <button class="btn btn-primary" type="button">Enabled</button>
+            <button class="btn btn-primary" type="button" data-bs-toggle="button" aria-pressed="false">
+              Toggle
+            </button>
+            <button class="btn btn-primary" type="button" disabled>Disabled</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

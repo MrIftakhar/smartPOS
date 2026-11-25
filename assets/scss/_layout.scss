@@ -1,0 +1,169 @@
+/**
+ * @fileoverview Responsive sidebar, top bar, and workspace for smartPOS.
+ * @author Md Iftakhar Islam
+ */
+
+:root {
+  --smartpos-sidebar-width: 15rem;
+  --smartpos-topbar-height: 4.25rem;
+}
+
+/* Page shell */
+.smartpos-layout {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.smartpos-workspace {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Sidebar and mobile drawer */
+.smartpos-sidebar {
+  --bs-offcanvas-width: min(var(--smartpos-sidebar-width), 85vw);
+  --bs-offcanvas-bg: var(--smartpos-sidebar-bg);
+  --bs-offcanvas-color: var(--smartpos-sidebar-text);
+  --bs-offcanvas-border-color: var(--smartpos-sidebar-border);
+
+  color: var(--smartpos-sidebar-text);
+}
+
+.smartpos-sidebar-header,
+.smartpos-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: var(--smartpos-topbar-height);
+  padding: 0.75rem 1rem;
+}
+
+/* Brand and sidebar navigation */
+.smartpos-brand,
+.smartpos-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.smartpos-brand {
+  color: var(--smartpos-sidebar-text);
+  font-size: var(--smartpos-font-size-xl);
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+.smartpos-brand:hover {
+  color: var(--smartpos-sidebar-text);
+}
+
+.smartpos-brand-accent {
+  color: var(--smartpos-color-primary);
+}
+
+.smartpos-nav-link {
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  color: var(--smartpos-sidebar-link-color);
+}
+
+.smartpos-nav-link:hover {
+  background-color: var(--smartpos-sidebar-link-hover-bg);
+  color: var(--smartpos-sidebar-link-hover-color);
+}
+
+.smartpos-nav-link[aria-current="page"] {
+  background-color: var(--smartpos-sidebar-link-active-bg);
+  color: var(--smartpos-sidebar-link-active-color);
+  font-weight: var(--smartpos-font-weight-semibold);
+}
+
+/* Top bar */
+.smartpos-topbar {
+  background-color: var(--smartpos-header-bg);
+  color: var(--smartpos-header-text);
+  border-bottom: 1px solid var(--smartpos-header-border);
+  box-shadow: var(--smartpos-header-shadow);
+}
+
+.smartpos-avatar {
+  display: inline-grid;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: var(--smartpos-header-user-bg);
+  font-size: var(--smartpos-font-size-xs);
+  font-weight: var(--smartpos-font-weight-bold);
+}
+
+/* Sidebar open and close controls */
+.smartpos-icon-button {
+  --bs-btn-color: var(--smartpos-header-icon-color);
+  --bs-btn-hover-color: var(--smartpos-header-icon-color);
+  --bs-btn-active-color: var(--smartpos-header-icon-color);
+  --bs-btn-hover-bg: var(--smartpos-header-user-hover-bg);
+  --bs-btn-active-bg: var(--smartpos-header-user-hover-bg);
+
+  display: inline-grid;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  place-items: center;
+}
+
+.smartpos-sidebar .smartpos-icon-button {
+  --bs-btn-color: var(--smartpos-sidebar-text);
+  --bs-btn-hover-color: var(--smartpos-sidebar-text);
+  --bs-btn-active-color: var(--smartpos-sidebar-text);
+  --bs-btn-hover-bg: var(--smartpos-sidebar-link-hover-bg);
+  --bs-btn-active-bg: var(--smartpos-sidebar-link-active-bg);
+}
+
+.smartpos-icon-button:focus-visible,
+.smartpos-nav-link:focus-visible,
+.smartpos-brand:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Desktop layout matches the Bootstrap lg sidebar breakpoint. */
+@media (min-width: 992px) {
+  .smartpos-sidebar.offcanvas-lg {
+    flex: 0 0 var(--smartpos-sidebar-width);
+    background-color: var(--smartpos-sidebar-bg) !important;
+    box-shadow: var(--smartpos-sidebar-shadow);
+  }
+
+  .smartpos-topbar {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Mobile top bar uses the mobile colors from the theme. */
+@media (max-width: 991.98px) {
+  .smartpos-topbar {
+    background-color: var(--smartpos-header-mobile-bg);
+    color: var(--smartpos-header-mobile-text);
+    border-bottom-color: var(--smartpos-header-mobile-border);
+  }
+
+  .smartpos-topbar .smartpos-icon-button {
+    --bs-btn-color: var(--smartpos-header-mobile-icon-color);
+    --bs-btn-hover-color: var(--smartpos-header-mobile-icon-color);
+    --bs-btn-active-color: var(--smartpos-header-mobile-icon-color);
+    --bs-btn-hover-bg: var(--smartpos-header-mobile-icon-hover-bg);
+    --bs-btn-active-bg: var(--smartpos-header-mobile-icon-hover-bg);
+  }
+
+  .smartpos-topbar .smartpos-avatar {
+    background-color: var(--smartpos-header-mobile-avatar-bg);
+    border-color: var(--smartpos-header-mobile-avatar-border);
+  }
+}

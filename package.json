@@ -1,0 +1,20 @@
+{
+  "name": "smartpos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass --quiet-deps --load-path=node_modules assets/scss/main.scss assets/css/main.css",
+    "watch:css": "sass --watch --quiet-deps --load-path=node_modules assets/scss/main.scss:assets/css/main.css"
+  },
+  "keywords": [],
+  "author": "Md Iftakhar Islam",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.9"
+  },
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}
